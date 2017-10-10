@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon ./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register"
+    "test": "./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register",
+    "test:dev": "nodemon ./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register"
   },
   "keywords": [],
   "author": "",
