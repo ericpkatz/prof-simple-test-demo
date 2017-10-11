@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register --exit",
-    "test:dev": "nodemon ./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register"
+    "test:client": "./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register --exit",
+    "test:server": "DATABASE_URL=postgres://localhost/circle_test ./node_modules/mocha/bin/mocha test/server/**/*.js --exit",
+    "test": "npm run test:client && npm run test:server",
+    "test:dev": "npm run test:dev:client & npm run test:dev:server",
+    "test:dev:client": "nodemon ./node_modules/mocha/bin/mocha test/client/**/*.js --compilers js:babel-register",
+    "test:dev:server": "nodemon ./node_modules/mocha/bin/mocha test/server/**/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "pg": "^7.3.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "sequelize": "^4.13.8"
   },
   "devDependencies": {
     "babel": "^6.23.0",
