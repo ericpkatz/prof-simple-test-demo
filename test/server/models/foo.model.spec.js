@@ -10,7 +10,7 @@ describe('Foo', ()=> {
   });
   describe('seeded data', ()=> {
     it('has a bar and bazz', ()=> {
-      expect(seeded.foos.find( f => f.name === 'bar').name).to.equal('bar');
+      expect(seeded.foos.find( f => f.name === 'bar').name).to.equal('baR');
       expect(seeded.foos.find( f => f.name === 'bazz').name).to.equal('bazz');
     });
   });
